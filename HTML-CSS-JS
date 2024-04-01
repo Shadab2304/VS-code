@@ -1,0 +1,154 @@
+    // function add(num1, num2) {
+    //     let answer;
+    //     answer = num1 + num2;
+    //     return answer;
+    //   }
+    //  function subtract(num1, num2) {
+    //     let answer;
+    //     answer = num1 - num2;
+    //     return answer;
+    //   }
+    //   function multiply(num1, num2) {
+    //     let answer;
+    //     answer = num1 * num2;
+    //     //Write your code below
+    //     return answer;
+    //   }
+    //     function divide(num1, num2) {
+    //     let answer;
+    //     answer = num1 / num2;
+    //     return answer;
+    //   }
+    
+    
+    // let n1 = parseInt(prompt("Enter 1st number "));
+    // let n2 = parseInt(prompt("Enter 2nd number "));
+    
+    // let sum = add(n1,n2);
+    // let sub = subtract(n1,n2);
+    // let mul = multiply(n1,n2);
+    // let div = divide(n1,n2);
+    
+    // console.log("Addition is: ", sum);
+    // console.log("Subtraction is: ", sub);
+    // console.log("Multiplication is: ", mul);
+    // console.log("Division is: ", div);
+
+
+    // function countDigits(num1, num2)
+    // {
+    //   let countNum1 = 0;
+    //       while(num1 != 0){
+    //        num1 = parseInt(num1 / 10);
+    //       //  console.log(num1);
+    //        countNum1++; 
+    //       }
+
+    //   let countNum2 = 0;
+    //       while(num2 != 0){
+    //        num2 = parseInt(num2 / 10);
+    //       //  console.log(num2);
+    //        countNum2++; 
+    //       }
+
+    //   if(countNum1 == countNum2){
+    //       return true;
+    //   }else{
+    //       return false;
+    //   }
+    // }
+
+    // let n1 = 34566;
+    // let n2 = 6352;
+
+    // let result = countDigits(n1,n2);
+    // console.log(result);
+
+// =================== A R R A Y ==================================================
+// Heterogeneous nature in js - array can store the data from different data types and even functions in it.
+// const englishMarks = ['sonu', 65, 68, 87, 78, 85, 63];
+// console.log(englishMarks);
+// englishMarks[1] = 83;
+// console.log(englishMarks);
+
+// const arr = new Array ('Riya', 'Rahul', 'Sonam');
+// console.log(arr);
+
+// const cities = ['Mumbai','Delhi','Kolkata','Jaipur','Chennai'];
+// console.log(cities);
+
+// ----- Modifying an Element ------------
+// cities[1] = 'New Delhi';
+// console.log(cities);
+
+// ------ Adding an element ------------
+// const teamsIPL = ['RCB','KKR','CSK','MI','LSG'];
+// console.log(teamsIPL);
+// // --- PUSH
+// teamsIPL.push('DC');
+// console.log(teamsIPL);
+// // defining a var name to the pushed array - it counts the length of the array
+// const pushArray = teamsIPL.push('GT');
+// console.log(pushArray);
+// // --- unshift
+// teamsIPL.unshift('KXIP');
+// console.log(teamsIPL);
+// // defining a var name to the unshifted array - it counts the length of the array 
+// const unshiftArray = teamsIPL.unshift('KXIP');
+// console.log(unshiftArray);
+
+// // ------ Delete an elemet ------------
+// //  --- POP 
+// teamsIPL.pop();
+// console.log(teamsIPL);
+// // defining name to the pop array- it displays the poped element
+// const popArray = teamsIPL.pop();
+// console.log(popArray);
+
+// // --- Shift 
+// teamsIPL.shift();
+// console.log(teamsIPL);
+// // defining name to the pop array- it displays the poped element
+// const shiftArray = teamsIPL.shift();
+// console.log(shiftArray);
+
+//  ------- Check the element is present or not ------------
+// const teamsIPL = ['RCB','KKR','CSK','MI','LSG'];
+// console.log(teamsIPL);
+
+// // indexof()
+// const indexOfTeam = teamsIPL.indexOf('MI');
+// console.log(indexOfTeam);
+// // includes()
+// const includesOfTeam = teamsIPL.includes('DC');
+// console.log(includesOfTeam);
+
+// // slice() - it slice the elements from the begning. if we use -2. it display two elemets from last
+// const teamSlice = teamsIPL.slice(2);
+// console.log(teamSlice);
+// // splice()
+// const teamSplice = teamsIPL.splice(2,1,'RR');
+// console.log(teamSplice);
+
+// //  concat()
+// const nourthTeams = ['DC','RR','LSG','KXIP']
+// const southTeams = ['MI','RCB','CSK','KKR','SRH','PW']
+
+// const mergedTeam = nourthTeams.concat(southTeams);
+// console.log(mergedTeam);
+
+// =======================================================================
+
+// function addExpense(newExpense , originalExpenseArray) {
+
+//   originalExpenseArray.push(newExpense);
+
+//   return originalExpenseArray;
+  
+// }
+
+// const myArray = [340 , 567 , 434 , 653];
+// newExp = 543;
+// let finalArray;
+// finalArray = addExpense(newExp,myArray);
+// console.log(finalArray);
