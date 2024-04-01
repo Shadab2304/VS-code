@@ -1,3 +1,659 @@
+// let num = 20;
+// let str = 'string';
+// let bigNum = 10n;
+// let bool = true;
+
+// console.log(num.__proto__);
+// console.log(str.__proto__);
+// console.log(bigNum.__proto__);
+// console.log(bool.__proto__);
+
+// Index number 
+//  Hello World 
+// length = 11
+// H index number = 0
+// e index number = 1
+// l index number = 2
+// l index number = 3
+
+// Methos in Strings 
+
+// let str1 = "JavaScript is wonderful";
+// let str2 = "It is dynamically typed";
+// console.log(str1.__proto__);
+// let msg=str1.charAt(11);
+// console.log(str1.msg);
+// console.log(str1.concat(" ",str2));
+// console.log(str1.length);
+// console.log(str1.indexOf("i",8));
+// //  display the index of i after 8th index
+// // console.log(str1.toUpperCase);
+
+
+
+// function combineNames(firstName, lastName) {
+//     // Convert first name and last name to lowercase
+//     const firstNameLower = firstName.toLowerCase();
+//     const lastNameLower = lastName.toLowerCase();
+    
+//     // Combine first name and last name
+//     const username = firstNameLower + lastNameLower;
+        
+//     return username;
+// }
+
+// // Input
+// const firstName = "JOHN";
+// const lastName = "DOE";
+
+// // Call the function and print the result
+// const username = combineNames(firstName, lastName);
+// console.log("Username:", username);
+
+
+// Operators in JS
+//   1. Comparison Operator
+// --------------------------------------------------
+//   (  == , != , < ,   <= , >= , === , !== )
+
+// console.log(5==5);
+// console.log('6'!==6);
+
+// let age = 17;
+// let rightToVote = age >= 18;
+// console.log(rightToVote);
+
+//  2. Logical operator ( && , || , !)
+// ----------------------------------------------
+
+// let grade = 70;
+// let scholership = 70;
+// let eligible = (grade>60) && (scholership>60);
+// console.log(eligible);
+
+// let m1 = 63;
+// let m2 = 47;
+// let m3 = 59;
+// let m4 = 60;
+
+// let eligible = m1>60 || m2>60 || m3>60 || m4>60;
+// console.log(eligible);
+
+// console.log(1 && 3 && 2 && 9 && NaN && 5);
+// console.log(0 || NaN || null || 5 || false || undefined);
+
+//    Precedence
+// -------------------------------------
+
+
+
+// function isEligible(mathScore , englishScore , scienceScore) {
+//     let eligibleForAward;
+//     let total = mathScore + englishScore + scienceScore;
+//     eligibleForAward = ((mathScore>80 && englishScore>80) || (mathScore>80 && scienceScore>60) || (englishScore>80 && scienceScore>60)) && total >= 250;
+
+//   return eligibleForAward;
+//   }
+
+//   let math = 45;
+//   let english = 79;
+//   let science = 65;
+//   eligibleForAward = isEligible(math, english, science);
+//   console.log(eligibleForAward);
+
+
+// Type Coerciaon
+//  ===========================
+// the implicitly convertion of string into number
+// console.log(5+5);
+// let num = '5' - 2;
+// console.log(num);
+
+//  String and toString
+// console.log(String(500));
+// console.log(String(false));
+
+// // Number
+// console.log(Number("100"));
+// console.log(Number(false));
+
+// let a = '100';
+// console.log(+a);
+
+// parseInt
+// it pass all the before till the string arrise.
+
+// console.log(parseInt('1230T5'));
+// console.log(parseInt(123.45));
+// console.log(parseFloat(123.45));
+
+
+// function calculateAverage(student1Score ,student2Score ,student3Score) {
+
+//     let averageScore;
+
+//     averageScore = (Number(student1Score) + Number(student2Score) + Number(student3Score))/3;
+  
+//   return averageScore;
+//   }
+  
+//   let s1 = "90";
+//   let s2 = "96";
+//   let s3 = "77";
+  
+//   let avg = calculateAverage(s1,s2,s3);
+//   console.log("The average score is = ",avg.toFixed(2));
+
+// function shoppingDiscountCalculator(originalValue,discountPercentage){
+//   let answer;
+// answer = originalValue - discountPercentage;
+
+// return answer
+//   }
+
+// let price = "50.75";
+// let discp = "15.5";
+
+// let floatPrice = parseFloat(price);
+// let floatDiscp = parseFloat(discp);
+
+// let discount = floatPrice*(floatDiscp/100);
+// let finalPrice = parseFloat(shoppingDiscountCalculator(price,discount));
+
+// console.log("Discounted Price =" + finalPrice.toFixed(2));
+
+// // ===========================================================
+
+// function temperatureInCelcius(temperatureInCelsius){
+//   let tempFahr = (temperatureInCelsius*(9/5))+32;
+//   let isHot = tempFahr > 80;
+// return isHot;
+//   }
+// let tempCels = 35;
+// console.log(temperatureInCelcius(tempCels));
+
+// =================================================
+
+// function shoppingDiscountCalculator(originalValue,discountPercentage){
+//   let answer;
+
+// let originalPriceNum = parseFloat(originalValue);
+// let discountPercentageNum = parseFloat(discountPercentage);
+
+//   let discount = originalPriceNum*discountPercentageNum/100;
+//   answer = originalValue - discount;
+  
+// return answer
+//   }
+
+// let price = "50.75";
+// let discP = "15.5";
+// finalPrice = shoppingDiscountCalculator(price,discP);
+// console.log("Discounted Price =",finalPrice.toFixed(2));
+// =================================================================
+// function checkEligibility(age) {
+//   let answer;
+//   if(age>=18)
+//   answer = "granted";
+//   else
+//   answer = "denied";
+//   //Write your code here
+//   return answer;
+// }
+
+// let num = prompt("Enter your Age ");
+// let result = checkEligibility(num);
+// console.log(result);
+
+// ================================================================
+
+// function discountCalculator(totalAmount) {
+//   let answer;
+  
+//  if(totalAmount>=100)
+//   answer = totalAmount-totalAmount*10/100;
+// else
+//   answer = totalAmount-totalAmount*5/100;
+  
+// return answer
+// }
+
+// let num = prompt("Enter total ammount ");
+// let result = discountCalculator(num);
+// console.log(result);
+
+// function main(marks) {
+//   let result;
+//   //write your code here
+//   if(marks>=90)
+//   result = "A grade";
+//   else if(marks>=80)
+//   result = "B grade";
+//   else if(marks>=70)
+//   result = "C grade";
+//   else if(marks>=60)
+//   result = "D grade";
+//   else
+//   result = "F grade";
+
+//   return result;
+// }
+
+// let num = prompt("Enter Marks ");
+// grade = main(num);
+// console.log(grade);
+
+// =============================================
+
+// function main(email) {
+//   let result;
+//   const emailLen = email.length;
+//   // console.log(emailLen);
+
+//   const dotIndex = email.lastIndexOf('.');
+//   // console.log(dotIndex);
+
+//   const atIndex = email.lastIndexOf('@');
+//   // console.log(atIndex);
+
+//   const lastIndex = emailLen - 1;
+
+//   if (
+//     emailLen >= 11 &&
+//     lastIndex - dotIndex >= 2 &&
+//     lastIndex - dotIndex <= 3 &&
+//     dotIndex - atIndex >= 3
+//   )
+//     result = email;
+//   else result = 'invalid email';
+
+//   return result;
+// }
+
+// const mail = prompt("Enter Your Email id ");
+// let answer = main(mail);
+// console.log(answer);
+
+// ==========================================================
+
+// function leapYear(year) {
+//   let answer;
+//  //Write your code here
+//   if((year%4 === 0 && year%100 !== 0) || (year%400 === 0)){
+//           answer = true;
+//   }else{
+//           answer = false;
+//   }
+  
+//   return answer;
+// }
+
+// let num = 2000;
+// leap = leapYear(num);
+// console.log(leap);
+// =======================================================
+
+// function traficLight(color) {
+//   let answer;
+//  //Write your code here
+//   switch(color){
+//     case "red":
+//       answer = "Stop";
+//       break;
+//     case "yellow":
+//         answer = "start";
+//         break;
+//     case "green":
+//           answer = "Go ahead";
+//     default:
+//       answer = "invalid color";
+//     } 
+//   return answer;
+// }
+
+// let num = 'blue';
+// leap = traficLight(num);
+// console.log(leap);
+
+// ===================================================
+
+// function coffeeMachine(coffeeType) {
+//   let answer;
+// coffeeType = coffeeType.toLowerCase();
+//   //Write your code here
+//   switch(coffeeType)
+//       {
+//           case "regular":
+//               answer = 2.50;
+//           break;
+              
+//           case "latte":
+//               answer = 3.50;
+//           break;
+              
+//           case "cappuccino":
+//               answer = 4.00;
+//           break;
+              
+//           case "espresso":
+//               answer = 2.50;
+//           break;
+          
+//           default:
+//               answer = "NA";
+//       }
+// return answer;
+// }
+
+// let num = 'REGUlar';
+// result = coffeeMachine(num);
+// console.log(result);
+
+// let x = 23;
+// switch (true) {
+//     case (x > 10 && x < 20):
+//         console.log("The num is between 10 and 20");
+//         break;
+//     case (x > 20 && x < 50):
+//         console.log("the num is between 20 and 50");
+// }
+// =====================================================
+// function calculate(amount) {
+//   let discount;
+
+//   switch(true){
+//       case (amount<500):
+//           discount = "No Discount";
+//           break;
+//       case (amount>=500 && amount<1000):
+//           discount = amount*(10/100);
+//           break;
+//       case (amount>=1000 && amount<2000):
+//           discount = amount*(20/100);
+//           break;
+//       case (amount>=2000 && amount<4000):
+//           discount = amount*(30/100);
+//           break;
+//       case (amount>=4000 && amount<5000):
+//           discount = amount*(40/100);
+//           break;
+//       case (amount>=5000):
+//           discount = amount*(50/100);
+//           break;
+//       default:
+//           discount = "invalid";
+//   }
+//   return discount;
+// }
+
+// let total=2500;
+// disc = calculate(total);
+// console.log(disc);
+
+// =====================================================
+
+// function main(tempF) {
+//   let result;
+
+//     // (32°F − 32) × 5/9 = 0°C
+//   // write your code here
+//     let tempC = (tempF - 32)*(5/9);
+    
+//     if(tempC >=37){
+//         result = "you have got a fever " + tempC.toFixed(1);
+//     }else{
+//         result = "you dont't have a fever " + tempC.toFixed(1);
+//     }
+
+//   return result;
+// }
+
+// let tF = 98;
+// ans = main(tF);
+// console.log(ans);
+// ====================================================
+
+
+//                     LOOPS 
+
+// --------------------------- For loop --------
+// for(let i=1; i<=20; i++){
+//   console.log(i);
+// }
+
+// let i=1;
+// for(; i<=10; i++){
+//   console.log(i);
+// }
+
+// let i;
+// for(i=1; i<=5;){
+//   console.log(i);
+//   i++;
+// }
+// ========================================
+// function sumOfEvenNumbers(limit) {
+
+//   let result = 0;
+//   let i=2;
+//  for(i = 2; i<=limit; i=i+2)
+//  {
+//       result = result+i;
+//  }
+
+//   return result;
+// }
+
+// let num = 10;
+// let sum = sumOfEvenNumbers(num);
+// console.log(sum);
+// ========================================
+// function factorial(limit) {
+
+//   let result = 1;
+//   let i = 0;
+//   for(i=limit; i>0; i--)
+//       {
+//           result = result*i;
+//       }
+  
+//   return result;
+// }
+
+// let num = 6;
+// let sum = factorial(num);
+// console.log(sum);
+// ===========================================
+//  print even numbers
+// let i=2;
+// for(; i<=50; i+=2){
+//   console.log(i);
+// }
+
+//  ==== Prime Numbers
+// let num = 11;
+// let isPrime = true;
+//   for(let i=2; i<num; i++)
+//       {
+//         if(num % i == 0){
+//           isPrime = false;
+//           break;
+//         }
+//       }
+// if(isPrime){
+//   console.log('Number is Prime');
+// }else{
+//   console.log('Number is not Prime');
+// }
+
+//  ========== Composite ===========
+
+// let number = 11;
+// let answer = false;
+// let i;
+//   for(i=2; i<number; i++){
+//     if(number%i === 0){
+//         answer = true;
+//         break;
+//     }
+//   }
+// if(answer){
+//     answer = true;
+// }else{
+//     answer = false;
+// }
+
+// console.log(answer);
+
+// ==========================================
+
+// let randomNum = (Math.random() * 10).toFixed(0);
+// let randomNum = Math.round(Math.random() * 100);
+// console.log("The Random Number is : " + randomNum);
+// let gessedNum;
+
+// do{
+//     gessedNum = prompt("Gess the Number");
+//     if(gessedNum == randomNum){
+//       console.log("*** You Win ***");
+//     }
+// }while(gessedNum != randomNum);
+// console.log("The Random Number was : " + randomNum);
+
+// ====================================================
+
+// function compoundInterest (principalAmount , annualInterestRate , numberOfYears)
+// { let answer = principalAmount;
+//  //Write your code here
+//  let i;
+//  let intr;
+// for(i=0; i<numberOfYears; i++){
+//   intr = answer*annualInterestRate;
+//   answer = answer + intr;
+// }
+//   return answer;
+// }
+
+// let P = 500;
+// let R = 8;
+// let T = 5;
+// R=R/100;
+// // console.log(R);
+// let C = compoundInterest(P,R,T);
+// console.log("compoundInterest = "+C);
+
+// ======================================================
+// nested loops -------------------
+
+// for(let i=1; i<=10; i++){
+//     for(let j=1; j<=10; j++){
+//       // console.log( j + " x " + i + " = " + i * j );
+//       console.log(`${j} x ${i} = ${i*j}`);
+//     }
+//     console.log("================");
+// }
+// ===========================================
+
+// function sumOfPrimeNumbers(limit) {
+//   let answer = 0;
+//   for (let num = 2; num <= limit; num++) {
+//       let prime = true;
+//       for (let i = 2; i <= Math.sqrt(num); i++) {
+//           if (num % i === 0) {
+//               prime = false;
+//               break;
+//           }
+//         }
+//         if (prime) {
+//           answer = answer + num;
+//           }
+//         }
+//   return answer
+// }  
+// let result = sumOfPrimeNumbers(50);
+// console.log(result);
+
+// ======================================================
+
+// function sumOfFactorial(num){
+//   let answer = 0;
+//   for(let i=1; i<=num; i++){
+//     if(num % i === 0){
+//       answer = answer+i;
+//     }
+//   }
+// return answer;
+// }
+// let result = sumOfFactorial(6);
+// console.log(result);
+// =======================================================
+
+//      FUNCTION
+
+// function welcome(name){
+//   console.log(`Hello ${name}, Welcome to my page`);
+// }
+
+// welcome("Riya");
+// welcome(prompt("Enter Your name "));
+// ==========================================
+// function printName(name){
+//   console.log(`Name = ${name}`);
+//   printAge(prompt("Enter Your Birth Year "));
+// }
+
+// function printAge(year){
+//   let age =   2024 - year;
+//   console.log(`Age = ${age}`);
+// }
+
+// printName(prompt("Enter Your Name "));
+// =========================================
+
+// function sum(num1,num2){
+//   console.log(`The Sum is : ${num1+num2}`);
+// }
+
+// sum(4,5);
+
+//  default Parameter
+// function sum(num1 = 0, num2 = 0){
+//   console.log(`The Sum is : ${num1+num2}`);
+// }
+
+// sum(4);
+
+// function square(num){
+//   console.log(num*num);
+// }
+
+// square(5);
+// square(9);
+// square(15);
+
+// function square(num){
+//   return num*num;
+// }
+
+// const a = square(10);
+// console.log(a); 
+
+// function lastDigit(num1, num2){
+//   lastNum1 = num1%10;
+//   lastNum2 = num2%10;
+//   if(lastNum1==lastNum2)
+//       {
+//           return true;
+//       }
+//   else
+//       {
+//           return false;
+//       }
+// }
+
+// let result = lastDigit(24,34);
+// console.log(result);
+
     // function add(num1, num2) {
     //     let answer;
     //     answer = num1 + num2;
