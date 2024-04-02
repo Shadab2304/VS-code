@@ -792,19 +792,103 @@
 
 // const mergedTeam = nourthTeams.concat(southTeams);
 // console.log(mergedTeam);
-
 // =======================================================================
 
 // function addExpense(newExpense , originalExpenseArray) {
-
 //   originalExpenseArray.push(newExpense);
-
 //   return originalExpenseArray;
-  
 // }
-
 // const myArray = [340 , 567 , 434 , 653];
 // newExp = 543;
 // let finalArray;
 // finalArray = addExpense(newExp,myArray);
 // console.log(finalArray);
+
+// ==========================================
+// const students = [
+//     'Tina',
+//     'Raju',
+//     'Kajal',
+//     'Sonu',
+//     'Bobby',
+//     'Ritu',
+//     'kabeer'
+// ];
+// let len = students.length;
+// for(let i=0; i<len; i++){
+// console.log(`Roll No. ${i+1} : ${students[i]}`);
+// }
+// ==============================================
+//    findDuplicate function
+
+// function findDuplicate(arr){
+//     let duplicateArr = [];
+//     for(let i = 0; i<arr.length; i++){
+//         for(let j=i+1; j<arr.length; j++){
+//             if(arr[i]===arr[j] && !duplicateArr.includes(arr[i])){
+//             duplicateArr.push(arr[i]);
+//             break;
+//             }
+//         }
+//     }
+//     return duplicateArr;
+// }
+// let arr = [4, 2, 34, 4, 1, 12, 1, 4];    
+// console.log(findDuplicate(arr));
+// ==================================================
+
+//  for ... in loop ------ it targeting indexes ------
+// const students = [
+//         'Tina',
+//         'Raju',
+//         'Kajal',
+//         'Sonu',
+//         'Bobby',
+//         'Ritu',
+//         'kabeer'
+//     ];
+//     let len = students.length;
+//     for(let i in students){
+//     console.log(`Roll No. ${Number(i)+1} : ${students[i]}`);
+//     }
+
+// //  for ... of loop ------ it targeting elements ------
+// for(let i of students){
+// console.log(i);
+// }
+// ==================================================
+
+
+// function sumOfArray(arr){
+//     let sum = 0;
+//     for(let i=0; i<arr.length; i++)
+//     {
+//         sum = sum + arr[i];
+//     }
+//     return sum;
+// }
+
+// const arr = [2,3,4,5,6];
+// result = sumOfArray(arr);
+// console.log(result);
+// ====================================================
+// arr1 = [1,2,4,5,7];
+// arr2 = [2,3,4,6,7,9,0];
+// function mergeArray(arr1,arr2){
+// const mergedArray = arr1.concat(arr2);
+// console.log(mergedArray);
+//     for(let i = 0; i<mergedArray.length; i++){
+//         for(let j=i+1; j<mergedArray.length; j++){
+//             if(mergedArray[i]===mergedArray[j]){
+//             mergedArray.pop(mergedArray[i]);
+//             break;
+//             }
+//         }
+//     }
+//     return mergedArray;
+// }
+// let result = mergeArray(arr1,arr2);
+// console.log(result);
+// ==================================================
+
+
