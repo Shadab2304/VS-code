@@ -1,13 +1,563 @@
-Functions in JS
-
-Function Declaration--
-''''''''''''''''''''''''''''''''''
+// function declaration
 function sum(a,b){
-  return a+b;
+    return a+b;
 }
-const result = sum(4,5);
-console.log(result);
+console.log(sum(4,5));
+
+// function expression // function name has omited
+const sum2 = function(a,b){
+    return a+b;
+}
+console.log(sum2(5,6));
+
+// Arrow function  // function keyword has omited
+var prod = (num1,num2) =>{
+   return num1 * num2;
+} 
+console.log(prod(4,4));
+// or
+var prod = (num1,num2) => num1 * num2;
+console.log(prod(4,3));
+
+// IIFE - Immediately Invoked Function Expression
+(function(a,b){
+    console.log(a ** b);
+})(2,5);
 
 
-Function Expression
+const user = (function(){
+    const userData = {
+        userName: 'Harry',
+        UserAge: 20
+    };
+
+    function getName(){
+        console.log(userData.userName);
+    }
+
+    function updateAge(age){
+        console.log(userData.UserAge+age); 
+    }
+
+    return {getName, updateAge};
+})();
+
+console.log(user);
+console.log(user.userData);
+user.getName();
+user.updateAge(3);
+
+
+
+// user authentication system
+function main(){
+    const userAuth = (() => {
+      const users = [];
+  
+      const registerUser = (username, password) => {
+        // Check if the user already exists
+        if (checkCredentials(username, password)) {
+          return 'The user is already registered';
+        }
+  
+        // If user doesn't exist, add them to the users array
+        users.push({ username, password });
+        return 'The user have been added to the registeredUser array';
+      };
+  
+      const checkCredentials = (username, password) => {
+        // Check if any user in the array matches the given username and password
+        return users.some(user => user.username === username && user.password === password);
+      };
+  
+      return { registerUser };
+    })();
+  
+    console.log(userAuth.registerUser("user1", "password123"));
+    // Output: The user have been added to the registeredUser array
+    console.log(userAuth.registerUser("user1", "password123"));
+    // Output: The user is already registered
+  
+    return userAuth;
+  }
+  
+  main();
+  
+// Pure function
+
+
+// remove vowels
+function removeVowels(obj) {
+    return { ...obj, value: obj.value.replace(/[aeiou]/gi, "") };
+  }
+  
+  let strObj = { value: "Hello World" };
+  let newObj = removeVowels(strObj);
+  console.log(newObj.value);
+  console.log(strObj.value);
+
+// callback function
+
+greet(sayHi);
+greet(sayHello);
+greet(goodMorning);
+
+function greet(wish){
+    console.log(`${wish()}, Welcome to the Java Script`);
+}
+
+function sayHi(){
+    return 'Hi';
+}
+
+function sayHello(){
+    return 'Hello';
+}
+
+function goodMorning(){
+    return 'Good Morning';
+}
+
+// the function returning a function 
+
+
+// Quiz Generator
+
+function main()
+{
+  const questions = [
+    "Question1",
+    "Question2",
+    "Question3",
+    "Question4",
+    "Question5"
+  ];
+  function shuffle(arr) {
+    return function () {
+      const result = [...arr]; // Make a copy of the input array.
+      let currentIndex = arr.length;
+      while (currentIndex > 0) {
+        const randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex--;
+        // Swap the current element with the randomly-selected one.
+        const temp = result[currentIndex];
+        result[currentIndex] = result[randomIndex];
+        result[randomIndex] = temp;
+      }
+      return result;
+    };
+  } 
+const func = shuffle(questions);
+const shuffledArray1 = func();
+const shuffledArray2 = func();
+
+console.log(shuffledArray1);
+console.log(shuffledArray2);
+}
+
+main();
+
+
+
+  Heigher order function - wich is accepting a function as parameter or if a function returning a function from it self
+ where complete code is same but only little logical difference, the it will usefull.
+
+const inputs = [2,3,4,5,6,7,8,16];
+console.log(inputs);
+
+// Heigher order function
+function operation(input, fn){
+  const output = [];
+  for(let num of input){
+      output.push(fn(num));
+  }
+  return output;
+}
+
+function square(number) {
+      return number * number;
+  }
+
+function cube(number) {
+    return number * number * number;
+}
+
+console.log(operation(inputs,square));
+console.log(operation(inputs,cube));
+
+============================================
+function main() {
+  const array = [2, 4, 6, 2, 7, 8];
+  console.log(array);
+
+  function customMap(input,fn){
+      const newArray = [];
+      for(let num of input){
+        newArray.push(fn(num));
+      }
+      return newArray;
+  }
+  function square(number) {
+          return number * number;
+      }
+  function double(num) {
+        return num * 2;
+      }
+
+      console.log(customMap(array,square));
+      console.log(customMap(array,double));
+}
+
+main();
+
+
+////////////////   Currying in JS
+''''''''''''''''''''''''''
+function add(a,b,c){
+  return a+b+c;
+}
+console.log(add(4,5,6));
+
+function one(a){
+    return function (b){
+      return function (c){
+          return a+b+c;
+      };
+    };
+}
+console.log(one(4)(5)(6));
+
+
+function power(b){
+    return function (a){
+          return a ** b;
+    }
+}
+const sqaure = power(2);
+console.log(sqaure(2));
+console.log(sqaure(3));
+console.log(sqaure(4));
+console.log(sqaure(11));
+
+const cube = power(3);
+console.log(cube(2));
+console.log(cube(5));
+
+
+pizza pricing
+'''''''''''''''''''''''''''''''
+function pizzaPricing (size){
+    
+  const basePrice = {
+        small: 8,
+        medium: 10,
+        large: 12
+    };
+
+  return function (toppings){
+      return function (quantity){
+        const toppingCost = toppings.length*1.5;
+        totalPrice = (basePrice[size]+toppingCost)*quantity;
+          return totalPrice.toFixed(2);
+      }
+  }
+}
+
+console.log(pizzaPricing('large')(['chees','chilli','mayonis'])(2));
+
+
+
+JS heigher Order functions
+'''''''''''''''''''''''''''''''
+map()
+const newArray = array.map((currentValue, index, array) => {
+  Your callback function logic here
+  It should return a new value for each element in the array
+});
+
+const inputs = [2,3,4,5,15];
+const square = inputs.map(function(num){});
+const square = inputs.map(function(num){return num*num;});
+const square = inputs.map((num) => num*num);  // arrow fun
+console.log(square);
+
+
+
+Complete the createUserObjects function
+Do not alter the starter Code
+const ids = [1, 2, 3];
+const names = ["John", "Jane", "Alice"];
+const images = ["john.jpg", "jane.jpg", "alice.jpg"];
+function createUserObjects(ids,names,images){
+    return ids.map((id,index)=>({
+      id: ids[index],
+      name: names[index],
+      image: images[index]
+    }));    
+}
+console.log(createUserObjects(ids,names,images));
+
+
+==========================================================================
+
+const employees = [
+  { id: 1, name: "Alice", department: "sales", salary: 40000 },
+  { id: 2, name: "Bob", department: "engineering", salary: 50000 },
+  { id: 3, name: "Charlie", department: "marketing", salary: 45000 },
+  { id: 4, name: "David", department: "sales", salary: 35000 },
+  { id: 5, name: "Emily", department: "engineering", salary: 55000 }
+];
+
+function increaseSalaries(employees){
+  const updatedEmployees = employees.map((employee) => {
+    let salary = employee.salary;
+    switch (employee.department) {
+      case "sales":
+        salary = (salary * 1.1).toFixed(1);
+        break;
+      case "engineering":
+        salary = (salary * 1.15).toFixed(1);
+        break;
+      default:
+        salary = (salary * 1.05).toFixed(1);
+        break;
+    }
+    return { ...employee, salary };
+  });
+  return updatedEmployees;
+};
+
+console.log(increaseSalaries(employees));
+
+
+
+
+reduce()
+'''''''''''''''''
+
+reduce(redFn, initialValue);
+function redFn(accumulator, currentValue, currentIndex, arr)
+
+const input1 = [2,3,14,5,6,10];
+const sum = input1.reduce((total,num)=>{
+  return total+num;
+},0);
+console.log(sum);
+
+const input2 = [2,3,14,5,6,10];
+const max = input2.reduce((total,num)=>{
+  return Math.max(total,num);
+},0);
+console.log(max);
+
+const inputs = [2, 3, 14, 5, 6, 10];
+const summ = inputs.reduce((total, num) => total + num, 0);
+const average = summ / inputs.length;
+console.log(average);
+
+const numbers = [2,8,14,5,6,10];
+const sum = numbers.reduce((total,num)=>{
+  return num%2 === 0 ? total+num : total;
+},0);
+console.log(sum);
+
+
+const contacts = [
+  { name: "Alice", company: "ABC Inc." },
+  { name: "Bob", company: "XYZ Corp." },
+  { name: "Charlie", company: "ABC Inc." }
+];
+function mapContactsToCompanies(contacts) {
+    const company = contacts.reduce((accumulate, contact)=>{
+        if(contacts.company === ){
+
+        }
+    }.0);
+}
+
+
+
+const contacts = [
+  { name: "Alice", company: "ABC Inc." },
+  { name: "Bob", company: "XYZ Corp." },
+  { name: "Charlie", company: "ABC Inc." }
+];
+function mapContactsToCompanies(contacts) {
+  return contacts.reduce((obj, contact) => {
+    if (obj[contact.company] == undefined)
+    obj[contact.company] = [];
+    obj[contact.company].push(contact.name);
+    return obj;
+  }, {});
+}
+console.log(mapContactsToCompanies(contacts));
+
+
+
+filter()
+'''''''''''''''''''
+const numbers = [2,-8,14,-5,6,10];
+const positives = numbers.filter((num)=>num>0);
+console.log(positives);
+const negetives = numbers.filter((num)=>num<0);
+console.log(negetives);
+
+
+complete the filterSongs function
+Do not alter the starter code.
+const songs = [
+  {title: "All of Me", artist: "John Legend", genre: "Pop", duration: 248},
+  {title: "Despacito", artist: "Luis Fonsi", genre: "Pop", duration: 279},
+  {title: "Someone Like You", artist: "Adele", genre: "Pop", duration: 285},
+  {title: "Thriller", artist: "Michael Jackson", genre: "Pop", duration: 357},
+  {title: "Bohemian Rhapsody", artist: "Queen", genre: "Rock", duration: 354},
+  {title: "Stairway to Heaven", artist: "Led Zeppelin", genre: "Rock", duration: 480},
+  {title: "Sweet Child O' Mine", artist: "Guns N' Roses", genre: "Rock", duration: 355},
+  {title: "Smells Like Teen Spirit", artist: "Nirvana", genre: "Rock", duration: 302},
+  {title: "Hotel California", artist: "Eagles", genre: "Rock", duration: 390},
+  {title: "Thrash Unreal", artist: "Against Me!", genre: "Punk", duration: 292},
+  {title: "London Calling", artist: "The Clash", genre: "Punk", duration: 189}
+];
+
+const filters = { genre: "Rock", duration: 350 };
+
+function filterSongs(songs,filters){
+  //Implement your function here
+  const filterGenre = songs.filter(songs=>songs.genre == filters.genre);
+  const filterDuration = filterGenre.filter(filterGenre=>filterGenre.duration > filters.duration);
+return filterDuration;
+}
+
+console.log(filterSongs(songs,filters));
+
+
+find(), findIndex()
+''''''''''''''''''''''''''''''''
+const inputs = [22,13,15,77,65,98,58, 65, 44, 28, 55];
+const find = inputs.find((num)=> num==65);
+const find = inputs.find((num)=> num>65);
+const find = inputs.findIndex((num)=> num==65);
+const find = inputs.findIndex((num)=> num>65);
+const find = inputs.findIndex((num)=> num==60);
+const find = inputs.findLastIndex((num)=> num>40);
+const find = inputs.lastIndexOf(65)
+console.log(find);
+
+
+Grocery Delivery Service
 '''''''''''''''''''''''''''''''''
+const productList = [
+  { id: "p1", name: "Apples", category: "Fruits", price: 2.5, inStock: true },
+  { id: "p2", name: "Oranges", category: "Fruits", price: 1.99, inStock: false },
+  { id: "p3", name: "Blueberries", category: "Fruits", price: 4.99, inStock: true },
+  { id: "p4", name: "Carrots", category: "Vegetables", price: 1.0, inStock: true },
+  { id: "p5", name: "Tomatoes", category: "Vegetables", price: 1.5, inStock: true }
+  ];
+
+function searchAndBuyProduct(productList, productName){
+// search the product
+
+const product = productList.find((product) => product.name === productName);
+if(product && product.inStock){
+    product.inStock = false;
+    console.log("Purchase has been made");
+    return true;
+}
+	else 
+        return false;
+
+}
+
+const productName = "Apples";
+console.log(searchAndBuyProduct(productList,"Apples"));
+
+
+
+====================================
+this
+''''''''''''''''
+{
+  function one(){
+    console.log(this);
+  }
+  one();
+}
+
+
+
+Complete the totalorderValue function
+Do not alter the starter code
+
+const orders = [
+  {
+    orderNumber: 1,
+    items: [
+      { name: "Cappuccino", price: 3.5 },
+      { name: "Chocolate Croissant", price: 2.5 }
+    ]
+  },
+  {
+    orderNumber: 2,
+    items: [
+      { name: "Latte", price: 4.0 },
+      { name: "Blueberry Muffin", price: 2.75 }
+    ],
+    discountCode: "COFFEELOVER"
+  },
+  {
+    orderNumber: 3,
+    items: [
+      { name: "Tea", price: 7.0 },
+      { name: "Taj Tea", price: 2.75 }
+    ]
+  }
+];
+function totalOrderValue(orders, applyDiscount){
+  const orderTotals = orders.map((order) => {
+    let total = order.items.reduce((acc, item) => acc + item.price, 0);
+    if (order.discountCode) {
+      total = applyDiscount(order.discountCode, total);
+    }
+    return total;
+  });
+  const grandTotal = orderTotals.reduce((acc, total) => acc + total, 0);
+  return grandTotal.toFixed(2);
+};
+
+const applyDiscount = (discountCode, total) => {
+  switch (discountCode) {
+    case "COFFEELOVER":
+      return total * 0.9;
+      case "TEALOVER":
+      return total * 0.8;
+    default:
+      return total;
+  }
+};
+
+console.log(totalOrderValue(orders, applyDiscount));
+
+
+
+
+
+Complete the function calculateAverage
+const weather = [
+  { city: "New York", temperature: 50, pressure: 1015 },
+  { city: "Los Angeles", temperature: 70, pressure: 1010 },
+  { city: "Chicago", temperature: 40, pressure: 1012 },
+  { city: "Houston", temperature: 75, pressure: 1020 },
+  { city: "Miami", temperature: 80, pressure: 1017 }
+];
+
+function calculateAverage(pressureThreshold){
+const filteredWeather = weather.filter(city => city.pressure >= pressureThreshold);
+const temperatures = filteredWeather.map(city => city.temperature);
+const totalTemperature = temperatures.reduce((acc, temperature) => acc + temperature, 0);
+const averageTemperature = totalTemperature / temperatures.length;
+return averageTemperature.toFixed(1);
+}
+
+const pressureThreshold = 1015;
+console.log(calculateAverage(pressureThreshold));
+//Output : 68.3
