@@ -1,0 +1,88 @@
+
+//  Object Literals
+
+/*
+let movie = {
+    title: 'The Avengers',
+    genre: 'Action, SciFi, Thriller',
+    cast: {
+            mainLead: 'Robert Downey',
+            other: 'Chris Evan'
+        },
+    getDetails: function(){
+        console.log(
+                `Title: ${movie.title}\nYear: ${movie.year}\nGenre: ${movie.genre}`
+            );},
+    getMovieDetails : function(detail){
+        console.log(movie[detail]);
+    }
+};
+// movie.year = 2012;
+// movie['year'] = 2012;
+// movie = {...movie, year: 2012};
+
+console.log(movie.title);
+movie.getDetails();
+
+const detail = 'year';
+movie.getMovieDetails(detail);
+console.log(movie.cast.mainLead);
+
+*/
+
+/*
+const persone = {
+    name: 'eva',
+    age: '25',
+    occupation: 'Engineer'
+};
+
+console.log(persone.name);
+
+const anotherPerson = persone;
+anotherPerson.name = 'kia';
+
+console.log(persone.name);
+console.log(anotherPerson.name);
+*/
+
+// User Profile system for a website
+// ''''''''''''''''''''''''''''''''''''''''''
+
+/*
+function main(){
+
+    const userProfile = {
+    name: "John Doe",
+    email: "john.doe@example.com",
+    address: {
+      city: "New York",
+      street: "123 Main St",
+      zipCode: "10001"
+    }
+  };
+  const userProfile2 = {
+    name: "Marry Jane",
+    email: "marry.jane@example.com",
+    address: {
+      city: "L.A",
+      street: "154, washington road",
+      block: '0101',
+      zipCode: "10011"
+    }
+  };
+  
+  function getUserDetail(profile, keys) {
+    // Implement your function here
+
+  }
+  
+  
+  console.log(getUserDetail(userProfile, ["address", "city"]));
+  // Usage: should return "New York"
+  //do not modify the return statement
+return getUserDetail;
+}
+
+main();
+*/
