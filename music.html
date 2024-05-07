@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- <script src="https://kit.fontawesome.com/12a41c30dd.js" crossorigin="anonymous"></script> -->
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    
+<!-- Header Section NavBar -->
+<header class="nav-bar">
+        <div class="title">
+            <div class="logo">
+                <img src="images/logo.png" alt="Music-logo">
+            </div>
+
+            <div class="name">
+                <h2>Music</h2>
+                <h4>Player</h4>
+            </div>
+        </div>
+
+        <div class="fav">
+            <h3>Favourite</h3>
+        </div>
+
+        <div class="search">
+                <button id="searchGlass" type="submit">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+                <button><input type="text" placeholder="Search" name="search" id="searchBox"></button>
+                <button id="mic" type="submit">
+                <i class="fa-solid fa-microphone"></i>
+                </button>
+        </div>
+
+        <div class="">
+            <i class="fa-solid fa-bell"></i>
+        </div>
+
+        <div class="profile">
+            <img src="images/profilePic.jpg" alt="profile">
+        </div>
+</header>
+
+<main>
+    
+<aside class="left">
+    <!-- Banner -->
+    <section class="banner">
+        <div class="img1">
+            <img src="images/banner1.jpg" alt="banner1">
+        </div>
+        <div class="img2">
+            <img src="images/banner2.png" alt="banner2">
+        </div>
+        <div class="img3">
+            <img src="images/banner3.png" alt="banner3">
+        </div>
+    </section>
+    <!-- Latest Releases -->
+    
+    <div class="section-heading">
+        <h1>Latest Release</h1>
+    </div>
+    
+    <section class="latest-releases"> 
+        <div class="release">
+                <div class="image">
+                    <img src="images/dua lipa.png">
+                </div>
+                <div class="caption">
+                    <h3>Onism</h3>
+                    <p>Aug 11, 2023</p>
+                </div>
+                <div class="options">
+                    <h3>...</h3>
+                    <p>4:45</p>
+                </div>
+            </div>
+
+            <div class="release">
+                <div class="image">
+                    <img src="images/rihanna.png">
+                </div>
+                <div class="caption">
+                    <h3>Onism</h3>
+                    <p>Aug 11, 2023</p>
+                </div>
+                <div class="options">
+                    <h3>...</h3>
+                    <p>4:45</p>
+                </div>
+            </div>
+
+            <div class="release">
+                <div class="image">
+                    <img src="images/weeknd.png">
+                </div>
+                <div class="caption">
+                    <h3>Onism</h3>
+                    <p>Aug 11, 2023</p>
+                </div>
+                <div class="options">
+                    <h3>...</h3>
+                    <p>4:45</p>
+                </div>
+            </div>
+
+            <div class="release">
+                <div class="image">
+                    <img src="images/justin.png">
+                </div>
+                <div class="caption">
+                    <h3>Onism</h3>
+                    <p>Aug 11, 2023</p>
+                </div>
+                <div class="options">
+                    <h3>...</h3>
+                    <p>4:45</p>
+                </div>
+            </div>
+            
+            <!-- <div class="options-reveal" id="opt-rvl">
+                <a href="#">Play Now</a>
+                <a href="#">Add to Queue</a>
+                <a href="#">Add to Playlist</a>
+                <a href="#">Get Info</a>
+            </div> -->
+    </section>
+
+<!-- Popular artists -->
+
+    <div class="section-heading">
+    <h1>Popular Artists</h1>
+    </div>
+
+    <section class="popular-artist">
+        <div class="artist">
+            <div class="artist-img">
+                <img src="images/sheeran.png">
+            </div>
+            <div class="artist-name">
+                <h3>Sheeran</h3>
+            </div>
+        </div>
+
+        <div class="artist">
+            <div class="artist-img">
+                <img src="images/rihanna.png">
+            </div>
+            <div class="artist-name">
+                <h3>Rihanna</h3>
+            </div>
+        </div>
+
+        <div class="artist">
+            <div class="artist-img">
+                <img src="images/weeknd.png">
+            </div>
+            <div class="artist-name">
+                <h3>Weeknd</h3>
+            </div>
+        </div>
+
+        <div class="artist">
+            <div class="artist-img">
+                <img src="images/dua lipa.png">
+            </div>
+            <div class="artist-name">
+                <h3>Dua Lipa</h3>
+            </div>
+        </div>
+
+        <div class="artist">
+            <div class="artist-img">
+                <img src="images/tailor swift.png">
+            </div>
+            <div class="artist-name">
+                <h3>Taylor Swift</h3>
+            </div>
+        </div>
+
+        <div class="artist">
+            <div class="artist-img">
+                <img src="images/justin.png">
+            </div>
+            <div class="artist-name">
+                <h3>Justin Beiber</h3>
+            </div>
+        </div>
+
+    </section>
+
+    <!-- stations  -->
+
+<section class="stations">
+<div class="mainFlex">
+
+    <figure id="station-logo">
+        <img src="images/music-station.png">
+    </figure>
+
+    <div class="paly-stations">
+        <figure><img src="images/rihanna.png" alt=""><p>Love</p></figure>
+        <figure><img src="images/sheeran.png" alt=""><p>Retro</p></figure>
+        <figure><img src="images/tailor swift.png" alt=""><p>Chill</p></figure>
+        <figure><img src="images/dua lipa.png" alt=""><p>Workout</p></figure>
+        <figure><img src="images/justin.png" alt=""><p>Rock</p></figure>
+        <figure><img src="images/weeknd.png" alt=""><p>Pop</p></figure>
+     </div>
+
+</div>
+</section>
+
+<!-- banner 2 -->
+
+<section class="banner2">
+
+    <div class="banner2Flex">
+        <figure class="banner2Photo"><a href=""><img src="images/banner1.jpg"><P>Party</P></a></figure>
+        <figure class="banner2Photo"><a href=""><img src="images/banner2.png"><P>Electronic</P></a></figure>
+        <figure class="banner2Photo"><a href=""><img src="images/banner3.png"><P>RoadTrip</P></a></figure>
+    </div>
+
+</section>
+
+<section class="latest-english">
+
+    <div class="section-heading">
+        <h1>Latest English</h1>
+    </div>
+    
+    <div class="english">
+        <figure>
+            <img src="images/rihanna.png" alt="">
+            <p>Call Me By Your Name</p>
+            <p>AUG 2, 2020</p>
+        </figure>
+
+        <figure>
+            <img src="images/rihanna.png" alt="">
+            <p>Call Me By Your Name</p>
+            <p>AUG 2, 2020</p>
+        </figure>
+
+        <figure>
+            <img src="images/rihanna.png" alt="">
+            <p>Call Me By Your Name</p>
+            <p>AUG 2, 2020</p>
+        </figure>
+
+        <figure>
+            <img src="images/rihanna.png" alt="">
+            <p>Call Me By Your Name</p>
+            <p>AUG 2, 2020</p>
+        </figure>
+
+        <figure>
+            <img src="images/rihanna.png" alt="">
+            <p>Call Me By Your Name</p>
+            <p>AUG 2, 2020</p>
+        </figure>
+
+        <figure>
+            <img src="images/rihanna.png" alt="">
+            <p>Call Me By Your Name</p>
+            <p>AUG 2, 2020</p>
+        </figure>
+    </div>
+
+</section>
+
+
+</aside>
+
+
+<aside class="right">
+
+
+</aside>
+
+</main>
+
+<footer>
+</footer>
+
+</body>
+</html>
