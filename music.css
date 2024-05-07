@@ -1,0 +1,288 @@
+body{
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;   
+    background-color:black;
+}
+
+.nav-bar{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 10px 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+}
+
+.title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo img{
+    height: 50px;
+    width: 58px;
+    border-radius: 50%;
+    animation-name: rotate;
+    animation-duration: 4s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}
+@keyframes rotate {
+    0%{
+        transform: rotate(0deg);
+    }    
+    100%{
+        transform: rotate(360deg);
+    }
+}
+
+.profile img{
+    height: 50px;
+    width: 50px;
+    border-radius: 50%;
+}
+
+.name{
+    text-align: center;
+}
+
+.fav{
+    text-align: left;
+    border-color: aqua;
+    border: 10px;
+}
+
+/* search box */
+
+.search{
+    display: flex;
+    flex-direction: row;
+    height: 40px;
+    width: 320px;
+    border-radius: 10px;
+    border: none;
+    background: rgb(17, 16, 38);
+}
+
+.search input{
+    color: white;
+    width: 240px;
+    background:none;
+    border: none;
+}
+
+.search button{
+    color: white;
+    background:none;
+    border: none;
+}
+
+/* ---------  banner ------------- */
+
+.main{
+    display:flex;
+    flex-direction: row;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    height: 80vh;
+    padding-left: 20px;
+}
+
+.banner{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    justify-content: center;
+}
+
+.banner img{
+    height: 200px;
+    width: 300px;
+}
+
+.banner img:hover{
+    transform: scale(1.3);
+    z-index: 1;
+    transition: all ease-in-out 0.5s;
+}
+
+.section-heading{
+    width: 100%;
+    margin-left: 100px;
+}
+
+.latest-releases{
+    padding-left: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5x;
+    
+}
+
+.release{
+    display: flex;
+    flex-direction: row;
+    margin-top: 20px;
+    width: 50%;
+}
+
+.release img{
+    height: 100px;
+    width: 100px;
+    padding: 10px;
+}
+
+.release .caption{
+    width: 200px;
+}
+
+.options-reveal{
+    display: flex;
+    flex-direction: column;
+    width: 150px;
+    border: 5px;
+    border-color: white;
+
+}
+
+.options-reveal a{
+    text-decoration: none;
+    color: black;
+    border:solid white 1px;
+    background-color:darkgrey;
+}
+
+/* Popular Artist */
+
+.popular-artist{
+    display: flex;
+    margin-left: 100px;
+    /* flex-direction: row; */
+    justify-content: space-between;
+    /* flex-wrap: nowrap; */ 
+}
+
+.artist{
+    display: flex;
+    flex-direction: column; 
+    align-items: center;
+}
+
+.artist img{
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
+    background-color: aquamarine;
+}
+
+
+/* Stations */
+
+.stations{
+    background-color: rgb(17, 17, 43);
+    margin-left: 100px;
+    width: 90%;
+}
+
+.mainFlex{
+    display:inline-flex;
+    justify-content:space-around;
+    padding: 10px;
+
+}
+
+#station-logo img{
+    height: 100px;
+    width: 120px;
+}
+
+.paly-stations{
+    display: inline-flex;
+}
+
+.paly-stations img{
+    height: 100px;
+    width: 100px;
+    border-radius: 50%;
+    opacity: 80%;
+}
+
+.paly-stations figure{
+    margin: 10px;
+}
+
+.paly-stations figure>p{
+    position:absolute;
+    margin-top: -60px;
+    margin-left: 20px;
+    color: white;
+    font-weight: bold;
+    opacity: 70%;
+}
+
+/* Banner2 */
+
+.banner2Flex{
+    display: flex;
+    justify-content: space-between;
+    margin-left: 100px;
+    padding-top: 30px;
+}
+
+.banner2Photo{
+    height: 180px;
+    width: 300px;
+    overflow: hidden;
+}
+
+.banner2Flex img{
+    height: 100%;   
+    width: 100%;
+}
+
+.banner2Photo:hover img{
+    transform: scale(1.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.banner2Flex p{
+    color:white;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    bottom: 132px;
+    font-size: 1.6rem;
+    opacity: 0.9;
+    font-weight: 600;
+}
+
+.banner2Flex a{
+    text-decoration: none;
+}
+
+/* latest English */
+
+.english{
+    display:inline-flex;
+    width: 80%;
+    margin-left: 100px;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.english img{
+    height: 150px;
+    width: 150px;
+}
+
+.english p{
+    font-size: 0.7rem;
+}
